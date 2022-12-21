@@ -10,7 +10,7 @@ export default function Navbar() {
             <span className="navbar_img"></span>
           </li>
           <li>
-            <button>Register</button>
+            <button className="navbar_btn">Register</button>
           </li>
         </div>
       </div>

@@ -6,3 +6,41 @@
 body {
   font-family: sans-serif;
 }
+.navbar {
+  height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: linear-gradient(to right, #2778d4, #7336e6);
+}
+.navbar_container {
+  width: 1200px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 60px;
+}
+.navbar_logo {
+  flex: 1;
+  color: #fff;
+}
+.navbar_links {
+  flex: 1;
+  text-align: right;
+  color: #fff;
+}
+.navbar_links li {
+  list-style-type: none;
+}
+.navbar_btn {
+  text-decoration: none;
+  border: none;
+  height: 35px;
+  padding: 0 10px;
+  background: #1f2701;
+  color: #fff;
+  box-shadow: 10px 20px 30px rgb(0, 0, 0, 0.4);
+}
