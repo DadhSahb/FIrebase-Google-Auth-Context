@@ -37,6 +37,7 @@ body {
 }
 .navbar_btn {
   text-decoration: none;
+  outline: none;
   border: none;
   height: 35px;
   padding: 0 10px;

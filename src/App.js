@@ -1,11 +1,12 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
+import ContextFunc from "./context/ContextProvider";
 
 function App() {
   return (
-    <div className="App">
+    <ContextFunc>
       <Navbar />
-    </div>
+    </ContextFunc>
   );
 }
 

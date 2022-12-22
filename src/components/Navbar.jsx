@@ -1,6 +1,9 @@
 import React from "react";
+import { ContextProvider } from "../context/ContextProvider";
 
 export default function Navbar() {
+  const { register } = React.useContext(ContextProvider);
+
   return (
     <div className="navbar">
       <div className="navbar_container">
@@ -10,7 +13,9 @@ export default function Navbar() {
             <span className="navbar_img"></span>
           </li>
           <li>
-            <button className="navbar_btn">Register</button>
+            <button className="navbar_btn" onClick={register}>
+              Register
+            </button>
           </li>
         </div>
       </div>
