@@ -1,24 +1,15 @@
 import React from "react";
-import { ContextProvider } from "../context/ContextProvider";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const { register } = React.useContext(ContextProvider);
+  // const { register } = React.useContext(ContextProvider);
 
   return (
-    <div className="navbar">
-      <div className="navbar_container">
-        <div className="navbar_logo">Messenger</div>
-        <div className="navbar_links">
-          <li>
-            <span className="navbar_img"></span>
-          </li>
-          <li>
-            <button className="navbar_btn" onClick={register}>
-              Register
-            </button>
-          </li>
-        </div>
-      </div>
+    <div className="flex justify-between bg-gray-200 w-full p-4">
+      <h1 className="text-center text-2xl font-bold">
+        Firebase Google Auth & Context
+      </h1>
+      <Link to="/signin">Sign In</Link>
     </div>
   );
 }
