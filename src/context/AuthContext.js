@@ -2,9 +2,9 @@ import { createContext, useContext } from "react";
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  signInWithRedirect,
-  signOut,
-  onAuthStateChanged,
+  // signInWithRedirect,
+  // signOut,
+  // onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../firebase";
 
