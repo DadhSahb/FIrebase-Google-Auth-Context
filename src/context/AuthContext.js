@@ -1,23 +1,37 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  // signInWithRedirect,
-  // signOut,
-  // onAuthStateChanged,
+  signInWithRedirect,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
+
 import { auth } from "../firebase";
 
 const AuthProvider = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState({});
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
   };
 
+  const logout = () => {
+    signOut(auth);
+  };
+
+  useEffect(() => {
+    const userDetails = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log("User Details", currentUser);
+    });
+    return userDetails();
+  }, []);
+
   return (
-    <AuthProvider.Provider value={{ googleSignIn }}>
+    <AuthProvider.Provider value={{ googleSignIn, user, logout }}>
       {children}
     </AuthProvider.Provider>
   );

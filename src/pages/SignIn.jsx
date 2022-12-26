@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GoogleButton from "react-google-button";
+import { useHistory } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
 export default function SignIn() {
-  const { googleSignIn } = UserAuth();
+  const { googleSignIn, user } = UserAuth();
+  const history = useHistory();
 
   const handleGoogleSignIn = async () => {
     try {
@@ -12,6 +14,12 @@ export default function SignIn() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (user !== null) {
+      history.push("/account");
+    }
+  }, [user]);
 
   return (
     <div>
